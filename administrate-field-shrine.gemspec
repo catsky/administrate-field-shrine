@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["zhdhui@gmail.com"]
 
   spec.summary       = %q{Shrine field plugin for Administrate.}
-  spec.description   = %q{Shrine field plugin for Administrate.}
+  spec.description   = %q{Integrates Shrine as a field for Administrate in Rails apps.}
   spec.homepage      = "https://github.com/catsky/administrate-field-shrine"
   spec.license       = "MIT"
 
