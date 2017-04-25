@@ -1,6 +1,5 @@
 require "administrate/field/base"
 require "rails"
-require 'byebug'
 
 module Administrate
   module Field
