@@ -12,7 +12,11 @@ module Administrate
       end
 
       def url_only?
-       options.fetch(:url_only, false)
+        options.fetch(:url_only, false)
+      end
+
+      def cached_value
+        resource.send("cached_#{attribute}_data")
       end
     end
   end
