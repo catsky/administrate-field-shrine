@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "administrate-field-shrine"
-  spec.version       = "0.0.3"
+  spec.version       = "0.0.4"
   spec.authors       = ["Ken Zheng"]
   spec.email         = ["zhdhui@gmail.com"]
 
@@ -30,9 +30,9 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency 'administrate', '> 0.5.0', '~> 0.11.0'
-  spec.add_dependency 'rails', '>= 4.2', '<= 5.2.3'
+  spec.add_dependency 'rails', '>= 4.2'
 
-  spec.add_development_dependency "bundler", "~> 1.14"
+  spec.add_development_dependency "bundler", "~> 2.1.4"
   spec.add_development_dependency "byebug"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
