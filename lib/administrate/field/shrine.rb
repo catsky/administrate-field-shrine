@@ -13,7 +13,13 @@ module Administrate
       # however, once data[:version].url is available data.url won't work,
       # so we're covered in both cases
       def url
-        (regular_url || version_url).to_s
+        if derivative
+          derivative_url || regular_url
+        elsif version
+          version_url
+        else
+          regular_url
+        end
       end
 
       def regular_url
@@ -21,15 +27,23 @@ module Administrate
       end
 
       def version_url
-        data.try(:[], version).try(:url)
-      end
-
-      def url_only?
-        options.fetch(:url_only, false)
+        resource.try((attribute.to_s + '_url').to_sym, version)
       end
 
       def version
         options.fetch(:version, nil)
+      end
+
+      def derivative_url
+        resource.try((attribute.to_s + '_url').to_sym, derivative)
+      end
+
+      def derivative
+	      options.fetch(:derivative, nil)
+      end
+
+      def url_only?
+        options.fetch(:url_only, false)
       end
 
       def cached_value
