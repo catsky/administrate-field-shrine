@@ -35,6 +35,10 @@ module Administrate
       def cached_value
         resource.send("cached_#{attribute}_data")
       end
+
+      def size
+        options.fetch(:size, nil)
+      end
     end
   end
 end
